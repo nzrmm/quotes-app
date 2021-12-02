@@ -1,5 +1,8 @@
 <template>
-  <div class="w-12/12 lg:w-6/12" @click="getQuotes">
+  <div v-if="this.$store.state.isLoading" class="flex justify-center items-center">
+    <img src="../assets/loading.svg" alt="">  
+  </div>
+  <div v-else class="w-12/12 lg:w-6/12" @click="getQuotes">
     <div class="flex flex-wrap space-x-2 justify-center lg:justify-start">
       <span v-for="tag in tags" :key="tag" class="px-4 py-1 mb-2 bg-teal-600 text-white rounded-lg">
         {{ tag }}
